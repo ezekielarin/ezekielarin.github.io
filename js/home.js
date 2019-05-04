@@ -6,7 +6,7 @@ var staffRecords = [
 
 
 function renderEmployees() {
-  staffRecords = staffRecords.sort(function(a,b){return b.votes-a.votes})
+  staffRecords = staffRecords.sort(function(a,b){})
   var template = $('#template').html();
   Mustache.parse(template);
   var rendered = Mustache.render(template, {staffRecords});
