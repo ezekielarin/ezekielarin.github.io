@@ -10,11 +10,11 @@ function renderEmployees() {
   var template = $('#template').html();
   Mustache.parse(template);
   var rendered = Mustache.render(template, {staffRecords});
-  $('#memeBody').html(rendered);
+  $('#stafflist').html(rendered);
 }
 
 window.addEventListener('load', async () => {
-  renderMemes();
+  renderEmployees();
 });
 
 jQuery("#memeBody").on("click", ".voteBtn", async function(event){
@@ -22,18 +22,20 @@ jQuery("#memeBody").on("click", ".voteBtn", async function(event){
   const dataIndex = event.target.id;
   const foundIndex = staffRecords.findIndex(meme => meme.index == dataIndex);
   staffRecords[foundIndex].votes += parseInt(value, 10);
-  renderMemes();
+  renderEmployees();
 });
 
-$('#registerBtn').click(async function(){
-  var name = ($('#regName').val()),
-      url = ($('#regUrl').val());
+$('#employStaff').click(async function(){
+  var employer = ($('#employer').val()),
+      staff_name = ($('#staff').val());
+      address = ($('#address').val());
 
   staffRecords.push({
-    creatorName: name,
-    memeUrl: url,
+    employedBy: employer,
+    staff_name: staff_name,
+    address: address,
     index: staffRecords.length+1,
     votes: 0
   })
-  renderMemes();
+  renderEmployees();
 });
