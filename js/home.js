@@ -10,6 +10,9 @@ function renderEmployees() {
   var template = $('#template').html();
   Mustache.parse(template);
   var rendered = Mustache.render(template, {staffRecords});
+  for (var i = 0; i < staffRecords.length; i++) {
+    staffRecords[i].index = i;
+  }
   $('#stafflist').html(rendered);
 }
 
