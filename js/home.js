@@ -5,9 +5,6 @@ var staffRecords = [
     {"employedBy": "herbert","staff_name": "Roland Smith","phone":"+434334","address":"casamila junction","salary":"34000","index":"3"}
   ];
 
-$(window).load(function() {
- showRecords();
-});
 
   function showRecords() {
     document.getElementById('stafflist').innerHTML = "";
@@ -20,6 +17,10 @@ $(window).load(function() {
      }
  
   }
+  
+$(window).load(function() {
+ showRecords();
+});
 
 
 
