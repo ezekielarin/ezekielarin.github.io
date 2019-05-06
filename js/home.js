@@ -1,44 +1,66 @@
 var staffRecords = [
-    {"employedBy": "Alice","staff_name": "James Matthews","address":"elington street", "index":1 },
-    {"employedBy": "Bob","staff_name": "Mark Hanson","address":"anderson drive", "index":2},
-    {"employedBy": "Carol","staff_name": "Thomas Cook","address":"north dakota" "index":3}
+    {"employedBy": "Alice","staff_name": "James Matthews","phone":"+422323234","address":"elington street","salary":20000,"index":1 },
+    {"employedBy": "Bob","staff_name": "Mark Hanson","phone":"+422323234","address":"anderson drive","salary":20000,"index":2},
+    {"employedBy": "Carol","staff_name": "Thomas Cook","phone":"+422323234","address":"north dakota","salary":20000,"index":3},
+    {"employedBy": "herbert","staff_name": "Roland Smith","phone":"+434334","address":"casamila junction","salary":34000,"index":3}
   ];
 
 
+
+  function showRecords() {
+    document.getElementById('stafflist').innerHTML = "";
+    document.getElementById('stafflist').innerHTML = "<tr><th>Name</th><th>Address</th><th>phone</th><th>Salary</th><th>Employed By</th> </tr>";
+    var template = $('#template').html();
+  Mustache.parse(template);
+
+    for (var i = 0; i < staffRecords.length; i++) {
+        var stf = staffRecords[i];
+    document.getElementById('stafflist').innerHTML += "<tr><td>"+stf.staff_name+"<td><td>"+stf.address+"<td><td>"+stf.phone+"<td><td>"+stf.salary+"<td><td>"+stf.employedBy+"<td></tr>";
+    console.log(stf);
+     }
+     var rendered = Mustache.render(template, {stf});
+     $('#staflist').html(rendered);
+    
+  }
+
+
+
 function renderEmployees() {
-  staffRecords = staffRecords.sort(function(a,b){})
+ // staffRecords = staffRecords.sort(function(a,b){})
   var template = $('#template').html();
   Mustache.parse(template);
-  var rendered = Mustache.render(template, {staffRecords});
-  for (var i = 0; i < staffRecords.length; i++) {
-    staffRecords[i].index = i;
+ for (var i = 0; i < staffRecords.length; i++) {
+    //staffRecords = staffRecords[i];
   }
-  $('#stafflist').html(rendered);
+  var rendered = Mustache.render(template, {staffRecords});
+ 
+  $('#staffers').html(rendered);
 }
 
 window.addEventListener('load', async () => {
   renderEmployees();
+  showRecords();
 });
 
-jQuery("#memeBody").on("click", ".voteBtn", async function(event){
-  const value = $(this).siblings('input').val();
-  const dataIndex = event.target.id;
-  const foundIndex = staffRecords.findIndex(meme => meme.index == dataIndex);
-  staffRecords[foundIndex].votes += parseInt(value, 10);
-  renderEmployees();
-});
 
-$('#employStaff').click(async function(){
+
+
+$('#addstaff').click(async function(){
   var employer = ($('#employer').val()),
-      staff_name = ($('#staff').val());
+      staff_name = ($('#staff_name').val());
       address = ($('#address').val());
+      salary = ($('#salary').val());
+      phone = ($('#phone').val());
 
   staffRecords.push({
     employedBy: employer,
     staff_name: staff_name,
+    phone: phone,
     address: address,
+    salary: salary,
     index: staffRecords.length+1,
-    votes: 0
   })
-  renderEmployees();
+
+  showRecords();
 });
+
