@@ -16,8 +16,7 @@ var staffRecords = [
     document.getElementById('stafflist').innerHTML += "<tr><td>"+stf.staff_name+"<td><td>"+stf.address+"<td><td>"+stf.phone+"<td><td>"+stf.salary+"<td><td>"+stf.employedBy+"<td></tr>";
     console.log(stf);
      }
-
-    
+ 
   }
 
 
