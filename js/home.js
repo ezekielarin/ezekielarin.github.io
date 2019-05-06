@@ -1,8 +1,8 @@
 var staffRecords = [
-    {"employedBy": "Alice","staff_name": "James Matthews","phone":"+422323234","address":"elington street","salary":"20000","index":1},
-    {"employedBy": "Bob","staff_name": "Mark Hanson","phone":"+422323234","address":"anderson drive","salary":"20000","index":2},
-    {"employedBy": "Carol","staff_name": "Thomas Cook","phone":"+422323234","address":"north dakota","salary":"20000","index":3},
-    {"employedBy": "herbert","staff_name": "Roland Smith","phone":"+434334","address":"casamila junction","salary":"34000","index":3}
+    {"employedBy": "Alice","staff_name": "James Matthews","phone":"+422323234","address":"elington street","salary":"20000","index":"1" },
+    {"employedBy": "Bob","staff_name": "Mark Hanson","phone":"+422323234","address":"anderson drive","salary":"20000","index":"2"},
+    {"employedBy": "Carol","staff_name": "Thomas Cook","phone":"+422323234","address":"north dakota","salary":"20000","index":"3"},
+    {"employedBy": "herbert","staff_name": "Roland Smith","phone":"+434334","address":"casamila junction","salary":"34000","index":"3"}
   ];
 
 
@@ -19,6 +19,8 @@ var staffRecords = [
 
     
   }
+
+
 
 
 
