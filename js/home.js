@@ -17,11 +17,10 @@ var staffRecords = [
      }
  
   }
-  
-$(window).load(function() {
- showRecords();
-});
 
+window.addEventListener('load', async () => {
+  showRecords();
+});
 
 
 
