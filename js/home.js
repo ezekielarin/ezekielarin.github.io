@@ -10,38 +10,15 @@ var staffRecords = [
   function showRecords() {
     document.getElementById('stafflist').innerHTML = "";
     document.getElementById('stafflist').innerHTML = "<tr><th>Name</th><th>Address</th><th>phone</th><th>Salary</th><th>Employed By</th> </tr>";
-    var template = $('#template').html();
-  Mustache.parse(template);
 
     for (var i = 0; i < staffRecords.length; i++) {
-        var stf = staffRecords[i];
+    var stf = staffRecords[i];
     document.getElementById('stafflist').innerHTML += "<tr><td>"+stf.staff_name+"<td><td>"+stf.address+"<td><td>"+stf.phone+"<td><td>"+stf.salary+"<td><td>"+stf.employedBy+"<td></tr>";
     console.log(stf);
      }
-     var rendered = Mustache.render(template, {stf});
-     $('#staflist').html(rendered);
+
     
   }
-
-
-
-function renderEmployees() {
- // staffRecords = staffRecords.sort(function(a,b){})
-  var template = $('#template').html();
-  Mustache.parse(template);
- for (var i = 0; i < staffRecords.length; i++) {
-    //staffRecords = staffRecords[i];
-  }
-  var rendered = Mustache.render(template, {staffRecords});
- 
-  $('#staffers').html(rendered);
-}
-
-window.addEventListener('load', async () => {
-  renderEmployees();
-  showRecords();
-});
-
 
 
 
