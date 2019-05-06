@@ -1,0 +1,18 @@
+
+contract staffRecords = 
+     type employees = {
+      employedby: string
+      name:string
+      address:string
+      phone:int
+      salary:int
+     }
+     
+  public function listEmployees()
+
+
+
+
+  public stateful function addEmployee()
+    put(employees{})
+    
