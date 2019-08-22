@@ -1,10 +1,11 @@
 var staffRecords = [
     {"employedBy": "Alice","staff_name": "James Matthews","phone":"+422323234","address":"elington street","salary":"20000","index":"1" },
     {"employedBy": "Bob","staff_name": "Mark Hanson","phone":"+422323234","address":"anderson drive","salary":"20000","index":"2"},
-  //  {"employedBy": "Carol","staff_name": "Thomas Cook","phone":"+422323234","address":"north dakota","salary":"20000","index":"3"},
     {"employedBy": "herbert","staff_name": "Roland Smith","phone":"+434334","address":"casamila junction","salary":"34000","index":"3"}
   ];
 
+const ContractSource = "";
+const contractAddress = 'ct_2qcqwwXmfLmZ3a18yvnv4p8ta9HGoyHRjCDvPMvyAqkuMRwzPD';
 
   function showRecords() {
     document.getElementById('stafflist').innerHTML = "";
@@ -15,7 +16,6 @@ var staffRecords = [
     document.getElementById('stafflist').innerHTML += "<tr><td>"+stf.staff_name+"<td><td>"+stf.address+"<td><td>"+stf.phone+"<td><td>"+stf.salary+"<td><td>"+stf.employedBy+"<td></tr>";
     console.log(stf);
      }
- 
   }
 
 window.addEventListener('load', async () => {
@@ -23,10 +23,8 @@ window.addEventListener('load', async () => {
 });
 
 
-
-
 $('#addstaff').click(async function(){
-  var employer = ($('#employer').val()),
+  var employer = ($('#employer').val());
       staff_name = ($('#staff_name').val());
       address = ($('#address').val());
       salary = ($('#salary').val());
