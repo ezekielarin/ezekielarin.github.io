@@ -16,6 +16,6 @@ contract Staffrecord =
      state.employee[index]
     
 
-    public stateful function addStaff(index : int, employer': string, name': string, address': string, phone': int, salary': int) =
+    public stateful function addStaff(index : int, employer' : string, name': string, address': string, phone': int, salary': int) =
       let staff = {employedby = employer', name = name', address = address', phone = phone', salary = salary'}
       put(state {employee[index] = staff})
